@@ -4,49 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Main stylesheet -->
-    <link rel="stylesheet" href="assets/css/styles.css" />
-
     <title>Guess the Secret Number!</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
 
   <body>
     <header class="header">
       <div class="container header__container">
         <h1 class="header__title">Guess the Secret Number!</h1>
-        <p class="header__range">(Guess: 1 - 30)</p>
+        <p class="header__range" aria-live="polite">(Guess: 1–30)</p>
 
-        <button class="btn btn--again" type="button">Again!</button>
+        <button class="btn btn--again" type="button">Play Again</button>
 
-        <div class="secret-number hidden">...</div>
+        <output class="secret-number hidden" aria-hidden="true">...?...</output>
       </div>
     </header>
 
-    <main class="main">
+    <main class="main" id="main-content">
       <div class="container game-container">
-        <section class="game-input">
-          <p class="game-input__correct hidden">Correct Number:</p>
-
+        <section class="game-input" aria-labelledby="guess-label">
+          <label id="guess-label" for="guess-input" class="sr-only">
+            Enter your guess
+          </label>
           <input
+            id="guess-input"
             type="number"
+            min="1"
+            max="30"
+            inputmode="numeric"
             class="game-input__field"
             placeholder="Enter your guess"
-            aria-label="Enter your guess"
           />
 
-          <button class="btn btn--check" type="button">Guess..!</button>
-        </section>
+          <button class="btn btn--check" type="button">Guess!</button>
 
-        <section class="game-info">
-          <p class="game-info__message">Let's guess... :)</p>
+          <p class="game-input__correct hidden">Correct Number:</p>
+        </section>
+        <section class="game-info" aria-live="polite">
+          <p class="game-info__message">Let's guess... 🙂</p>
+
           <p class="game-info__score">
-            💯 Score: <span class="score">20</span>
+            💯 Score: <output class="score">20</output>
           </p>
+
           <p class="game-info__highscore">
-            🥇 Highscore: <span class="highscore">0</span>
+            🥇 Highscore: <output class="highscore">0</output>
           </p>
         </section>
       </div>
     </main>
+    <script src="assets/js/script.js" defer></script>
   </body>
 </html>
