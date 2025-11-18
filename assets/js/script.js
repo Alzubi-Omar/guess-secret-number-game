@@ -6,5 +6,37 @@ const secretNumber = Math.trunc(Math.random() * 30) + 1;
 let score = 20;
 let highscore = 0;
 
+// UI Elements
 const againBtn = document.querySelector(".btn--again");
 const checkBtn = document.querySelector(".btn--check");
+const guessEl = document.querySelector("#guess-input");
+const body = document.querySelector("body");
+const messageEl = document.querySelector(".game-info__message");
+const numberEl = document.querySelector(".secret-number");
+const scoreEl = document.querySelector(".score");
+const highscoreEl = document.querySelector(".highscore");
+
+highscoreEl.textContent = highscore;
+numberEl.textContent = secretNumber;
+
+checkBtn.addEventListener("click", function () {
+  const guess = Number(guessEl.value);
+  // No input
+  if (!guess) {
+    messageEl.textContent = "⛔ No number!";
+    return;
+  }
+  // Player wins
+  if (guess === secretNumber) {
+    body.style.backgroundColor = "#60b347ff";
+    messageEl.textContent = "Correct Number! 🎉";
+    numberEl.style.width = "30rem";
+    numberEl.textContent = secretNumber;
+
+    if (score > 0 && score > highscore) {
+      highscore = score;
+      highscoreEl.textContent = highscore;
+    }
+    return;
+  }
+});
