@@ -3,9 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <title>Guess the Secret Number!</title>
-
     <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
@@ -36,12 +34,14 @@
             inputmode="numeric"
             class="game-input__field"
             placeholder="Guess"
+            autofocus
           />
 
           <button class="btn btn--check" type="button">Guess!</button>
 
           <p class="game-input__correct hidden">Correct Number:</p>
         </section>
+
         <section class="game-info" aria-live="polite">
           <p class="game-info__message">Let's guess... 🙂</p>
 

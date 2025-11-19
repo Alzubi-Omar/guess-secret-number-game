@@ -39,4 +39,19 @@ checkBtn.addEventListener("click", function () {
     }
     return;
   }
+  // Wrong number
+  if (score > 1) {
+    messageEl.textContent =
+      guess > secretNumber ? "📈 Too high!" : "📉 Too low!";
+    score--;
+    scoreEl.textContent = score;
+  } else {
+    // Game over
+    messageEl.textContent = "💥 You lost the game!";
+    scoreEl.textContent = 0;
+    body.style.backgroundColor = "#ff0000ff";
+    return;
+  }
 });
+
+// Reset the game (TODO)
