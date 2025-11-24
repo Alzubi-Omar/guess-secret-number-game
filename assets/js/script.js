@@ -1,6 +1,6 @@
 // Generate a random number between (1-30)
 
-const secretNumber = Math.trunc(Math.random() * 30) + 1;
+let secretNumber = Math.trunc(Math.random() * 30) + 1;
 
 // initialize score and highscore
 let score = 20;
@@ -17,7 +17,7 @@ const scoreEl = document.querySelector(".score");
 const highscoreEl = document.querySelector(".highscore");
 
 highscoreEl.textContent = highscore;
-numberEl.textContent = secretNumber;
+// numberEl.textContent = secretNumber;
 
 checkBtn.addEventListener("click", function () {
   const guess = Number(guessEl.value);
@@ -54,4 +54,15 @@ checkBtn.addEventListener("click", function () {
   }
 });
 
-// Reset the game (TODO)
+// Reset the game
+againBtn.addEventListener("click", function () {
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 30) + 1;
+
+  messageEl.textContent = "Start guessing...🙂";
+  scoreEl.textContent = score;
+  numberEl.textContent = "...?...";
+  guessEl.value = "";
+  numberEl.style.width = "15rem";
+  body.style.backgroundColor = "#222222ff";
+});
