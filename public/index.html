@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the Secret Number!</title>
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+
+  <body class="body">
+    <header class="header">
+      <h1 class="header__title">Guess the Secret Number</h1>
+      <p class="header__subtitle">(Between 1 and 30)</p>
+    </header>
+
+    <main class="game container">
+      <div class="secret-number">?...?</div>
+
+      <section class="game-info">
+        <p class="game-info__message">Start guessing...🙂</p>
+
+        <!-- Input + Button -->
+        <div class="game-info__controls">
+          <input
+            type="number"
+            min="1"
+            max="30"
+            id="guess-input"
+            class="game-info__input"
+            placeholder="Enter your guess"
+          />
+
+          <button class="btn btn--check">Check!</button>
+        </div>
+
+        <!-- Scoreboard -->
+        <div class="game-info__stats">
+          <p>💯 Score: <span class="score">20</span></p>
+          <p>🥇 Highscore: <span class="highscore">0</span></p>
+        </div>
+
+        <button class="btn btn--again">Again!</button>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__container">
+        <p class="footer__copyright">Creative Solutions By Omar</p>
+
+        <a
+          href="mailto:contact.alzubi@gmail.com"
+          class="btn btn--contact footer__cta"
+        >
+          Get in touch
+        </a>
+
+        <a href="/" class="footer__logo-link">
+          <img
+            class="footer__logo"
+            src="assets/imgs/logo.jpg"
+            alt="Company logo"
+          />
+        </a>
+
+        <p class="footer__year">© <span id="currentYear"></span></p>
+      </div>
+    </footer>
+
+    <script src="assets/js/script.js" defer></script>
+  </body>
+</html>
