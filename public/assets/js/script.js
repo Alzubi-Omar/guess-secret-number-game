@@ -1,5 +1,4 @@
 // Generate a random number between (1-30)
-
 let secretNumber = Math.trunc(Math.random() * 30) + 1;
 
 // initialize score and highscore
@@ -61,8 +60,8 @@ againBtn.addEventListener("click", function () {
 
   messageEl.textContent = "Start guessing...🙂";
   scoreEl.textContent = score;
-  numberEl.textContent = "...?...";
+  numberEl.textContent = "?..?";
   guessEl.value = "";
   numberEl.style.width = "15rem";
-  body.style.backgroundColor = "#222222ff";
+  body.style.backgroundColor = "#303030";
 });

@@ -34,6 +34,11 @@
   --font-size-lg: 2rem;
   --font-size-xl: 3rem;
   --font-size-xxl: 3.5rem;
+
+  /* Radios */
+  --radius-sm: 0.4rem;
+  --radius-md: 1rem;
+  --radius-lg: 2rem;
 }
 
 *,

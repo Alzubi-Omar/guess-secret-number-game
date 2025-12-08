@@ -1,0 +1,143 @@
+/* Buttons */
+.btn {
+  font-family: var(--font-family-accent);
+  background-color: var(--color-background-light);
+  color: var(--color-dark);
+  font-size: var(--font-size-md);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background-color: var(--color-secondary);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Variant: Check */
+.btn--check {
+  letter-spacing: 0.2rem;
+  width: 100%;
+  max-width: 30rem;
+}
+
+/* Variant: Again */
+.btn--again {
+  background-color: var(--color-primary);
+}
+
+/* Variant: Contact Button */
+.btn--contact {
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--color-primary);
+  color: var(--color-dark);
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-size: var(--font-size-md);
+  border-radius: var(--radius-sm);
+}
+
+.btn--contact:hover {
+  background-color: var(--color-btn-hover);
+  transform: translateY(-2px);
+}
+
+/* INPUT FIELDS */
+.game-info__input {
+  width: 100%;
+  max-width: 30rem;
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+
+  background: transparent;
+  border: 2px solid var(--color-secondary);
+  border-radius: var(--radius-sm);
+
+  color: var(--color-secondary);
+  font-family: var(--font-family-accent);
+  font-size: var(--font-size-lg);
+}
+
+.game-info__input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+/* SECRET NUMBER DISPLAY */
+.secret-number {
+  position: absolute;
+  top: 29%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 15rem;
+  padding-block: 3rem;
+
+  font-size: var(--font-size-xl);
+  text-align: center;
+  color: var(--color-secondary);
+
+  background: var(--color-background-dark);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-md);
+
+  transition: width 0.3s ease;
+}
+
+/* Footter logo */
+.footer__logo {
+  width: 8rem;
+  border-radius: var(--radius-md);
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.footer__logo:hover {
+  opacity: 1;
+}
+
+/* Mobile < 600px */
+@media (max-width: 599px) {
+  .btn--contact {
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .footer__logo {
+    width: 6rem;
+  }
+
+  .secret-number {
+    top: 20%;
+  }
+}
+
+/* Tablet 600px — 1023px */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .secret-number {
+    top: 25%;
+  }
+
+  .footer__logo {
+    width: 7rem;
+  }
+}
+
+/* Desktop ≥ 1200px */
+@media (min-width: 1200px) {
+  .footer__logo {
+    width: 10rem;
+  }
+}
