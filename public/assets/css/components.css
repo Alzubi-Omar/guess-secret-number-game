@@ -1,14 +1,18 @@
-/* Buttons */
+/* BUTTONS */
+/* ============================= */
 .btn {
-  font-family: var(--font-family-accent);
-  background-color: var(--color-background-light);
-  color: var(--color-dark);
-  font-size: var(--font-size-md);
+  display: inline-block;
   padding: var(--spacing-sm) var(--spacing-lg);
+  font-family: var(--font-base);
+  font-size: var(--font-size-md);
+  color: var(--color-dark);
+
+  background-color: var(--color-background-light);
   border: none;
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .btn:hover {
@@ -25,78 +29,117 @@
   cursor: not-allowed;
 }
 
-/* Variant: Check */
+/* Button Variant: Check */
 .btn--check {
-  letter-spacing: 0.2rem;
   width: 100%;
   max-width: 30rem;
+  letter-spacing: 0.2rem;
 }
 
-/* Variant: Again */
+/* Button Variant: Again */
 .btn--again {
   background-color: var(--color-primary);
 }
 
-/* Variant: Contact Button */
+/* Button Variant: Contact */
 .btn--contact {
-  display: inline-block;
   text-decoration: none;
+  padding: var(--spacing-xs) var(--spacing-md);
   background-color: var(--color-primary);
   color: var(--color-dark);
-  padding: var(--spacing-xs) var(--spacing-md);
-  font-size: var(--font-size-md);
   border-radius: var(--radius-sm);
 }
 
 .btn--contact:hover {
   background-color: var(--color-btn-hover);
-  transform: translateY(-2px);
 }
 
-/* INPUT FIELDS */
+/* INPUTS */
+/* ============================= */
+
 .game-info__input {
   width: 100%;
   max-width: 30rem;
-  padding: var(--spacing-md);
-  margin-bottom: var(--spacing-lg);
-  text-align: center;
 
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+
+  text-align: center;
   background: transparent;
+
   border: 2px solid var(--color-secondary);
   border-radius: var(--radius-sm);
 
-  color: var(--color-secondary);
   font-family: var(--font-family-accent);
   font-size: var(--font-size-lg);
+  color: var(--color-secondary);
+
+  outline: none;
+  transition: border-color 0.25s ease;
 }
 
 .game-info__input:focus {
-  outline: none;
   border-color: var(--color-primary);
 }
 
 /* SECRET NUMBER DISPLAY */
+/* ============================= */
+
 .secret-number {
-  position: absolute;
-  top: 29%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  font-size: var(--font-size-xl);
+  color: var(--color-secondary);
 
   width: 15rem;
   padding-block: 3rem;
-
-  font-size: var(--font-size-xl);
-  text-align: center;
-  color: var(--color-secondary);
 
   background: var(--color-background-dark);
   border: 2px solid var(--color-primary);
   border-radius: var(--radius-md);
 
+  text-align: center;
   transition: width 0.3s ease;
 }
 
-/* Footter logo */
+/* GAME INFO PANEL */
+/* ============================= */
+
+.game-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-md);
+  border-radius: var(--radius-md);
+  /* TODO */
+  width: 100%;
+}
+
+.game-info__message {
+  font-size: var(--font-size-md);
+}
+
+/* Controls (input + check button) */
+.game-info__controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+  align-items: center;
+  max-width: 30rem;
+}
+
+/* Stats panel (score + highscore) */
+.game-info__stats {
+  font-size: var(--font-size-md);
+  line-height: 1.6;
+  text-align: center;
+  /* TODO */
+  margin-left: 80rem;
+}
+
+/* FOOTER LOGO */
+/* ============================= */
+
 .footer__logo {
   width: 8rem;
   border-radius: var(--radius-md);
@@ -108,36 +151,6 @@
   opacity: 1;
 }
 
-/* Mobile < 600px */
-@media (max-width: 599px) {
-  .btn--contact {
-    font-size: var(--font-size-sm);
-    padding: var(--spacing-xs) var(--spacing-sm);
-  }
-
-  .footer__logo {
-    width: 6rem;
-  }
-
-  .secret-number {
-    top: 20%;
-  }
-}
-
-/* Tablet 600px — 1023px */
-@media (min-width: 600px) and (max-width: 1023px) {
-  .secret-number {
-    top: 25%;
-  }
-
-  .footer__logo {
-    width: 7rem;
-  }
-}
-
-/* Desktop ≥ 1200px */
-@media (min-width: 1200px) {
-  .footer__logo {
-    width: 10rem;
-  }
-}
+/* TODO */
+/* RESPONSIVE STYLES */
+/* ============================= */

@@ -60,7 +60,7 @@ againBtn.addEventListener("click", function () {
 
   messageEl.textContent = "Start guessing...🙂";
   scoreEl.textContent = score;
-  numberEl.textContent = "?..?";
+  numberEl.textContent = "?";
   guessEl.value = "";
   numberEl.style.width = "15rem";
   body.style.backgroundColor = "#303030";

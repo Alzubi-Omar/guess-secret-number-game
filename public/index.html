@@ -25,10 +25,10 @@
     </header>
 
     <main class="game container">
-      <div class="secret-number">?..?</div>
-
       <section class="game-info">
-        <p class="game-info__message">Start guessing...🙂</p>
+        <div class="secret-number" aria-label="Secret number">?</div>
+
+        <p class="game-info__message" aria-live="polite">Start guessing...🙂</p>
 
         <!-- Input + Button -->
         <div class="game-info__controls">
@@ -39,6 +39,7 @@
             id="guess-input"
             class="game-info__input"
             placeholder="Guess..?"
+            autocomplete="off"
           />
 
           <button class="btn btn--check">Check!</button>
