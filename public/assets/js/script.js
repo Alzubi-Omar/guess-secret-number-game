@@ -65,3 +65,6 @@ againBtn.addEventListener("click", function () {
   numberEl.style.width = "15rem";
   body.style.backgroundColor = "#303030";
 });
+
+// TO DO
+document.getElementById("currentYear").textContent = new Date().getFullYear();
