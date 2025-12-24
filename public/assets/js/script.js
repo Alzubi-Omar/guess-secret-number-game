@@ -1,5 +1,5 @@
 // Generate a random number between (1-30)
-let secretNumber = Math.trunc(Math.random() * 30) + 1;
+// let secretNumber = Math.trunc(Math.random() * 30) + 1;
 
 // initialize score and highscore
 let score = 20;
@@ -67,4 +67,4 @@ againBtn.addEventListener("click", function () {
 });
 
 // TO DO
-document.getElementById("currentYear").textContent = new Date().getFullYear();
+// document.getElementById("currentYear").textContent = new Date().getFullYear();

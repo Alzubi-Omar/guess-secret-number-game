@@ -1,5 +1,6 @@
-/* HEADER */
-/* ============================= */
+/* =========================================
+  HEADER 
+========================================= */
 .header {
   background-color: var(--color-background-dark);
   padding: var(--spacing-lg);
@@ -22,8 +23,9 @@
   color: var(--color-secondary);
 }
 
-/* MAIN */
-/* ============================= */
+/* =========================================
+  MAIN 
+========================================= */
 main {
   flex: 1;
   display: flex;
@@ -40,9 +42,9 @@ main {
   margin-inline: auto;
   padding-inline: var(--spacing-md);
 }
-
-/* FOOTER */
-/* ============================= */
+/* =========================================
+  FOOTER
+========================================= */
 .footer {
   background-color: var(--color-background-footer);
   padding: var(--spacing-sm) var(--spacing-lg);
@@ -61,8 +63,9 @@ main {
   font-size: var(--font-size-md);
 }
 
-/* MEDIA QUERIES */
-/* ============================= */
+/* =========================================
+  MEDIA QUERIES
+========================================= */
 /* Mobile: < 600px */
 @media (max-width: 599px) {
   .header {
