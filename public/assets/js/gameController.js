@@ -1,9 +1,12 @@
-// Generate a random number between (1-30)
-// let secretNumber = Math.trunc(Math.random() * 30) + 1;
+import { getRandomNumber } from "./utils.js";
 
 // initialize score and highscore
-let score = 20;
-let highscore = 0;
+
+let state = {
+  secretNumber: getRandomNumber(30),
+  score: 20,
+  highscore: 0,
+};
 
 // UI Elements
 const againBtn = document.querySelector(".btn--again");
@@ -15,38 +18,39 @@ const numberEl = document.querySelector(".secret-number");
 const scoreEl = document.querySelector(".score");
 const highscoreEl = document.querySelector(".highscore");
 
-highscoreEl.textContent = highscore;
-// numberEl.textContent = secretNumber;
+highscoreEl.textContent = state.highscore;
+
+function renderMessage(message) {
+  messageEl.textContent = message;
+}
 
 checkBtn.addEventListener("click", function () {
   const guess = Number(guessEl.value);
   // No input
   if (!guess) {
-    messageEl.textContent = "⛔ No number!";
+    renderMessage("⛔ No number!");
     return;
   }
   // Player wins
-  if (guess === secretNumber) {
+  if (guess === state.secretNumber) {
     body.style.backgroundColor = "#60b347ff";
-    messageEl.textContent = "Correct Number! 🎉";
+    renderMessage("Correct Number! 🎉");
     numberEl.style.width = "30rem";
-    numberEl.textContent = secretNumber;
-
-    if (score > 0 && score > highscore) {
-      highscore = score;
-      highscoreEl.textContent = highscore;
+    numberEl.textContent = state.secretNumber;
+    if (state.score > 0 && state.score > state.highscore) {
+      state.highscore = state.score;
+      highscoreEl.textContent = state.highscore;
     }
     return;
   }
   // Wrong number
-  if (score > 1) {
-    messageEl.textContent =
-      guess > secretNumber ? "📈 Too high!" : "📉 Too low!";
-    score--;
-    scoreEl.textContent = score;
+  if (state.score > 1) {
+    renderMessage(guess > state.secretNumber ? "📈 Too high!" : "📉 Too low!");
+    state.score--;
+    scoreEl.textContent = state.score;
   } else {
     // Game over
-    messageEl.textContent = "💥 You lost the game!";
+    renderMessage("💥 You lost the game!");
     scoreEl.textContent = 0;
     body.style.backgroundColor = "#ff0000ff";
     return;
@@ -55,11 +59,11 @@ checkBtn.addEventListener("click", function () {
 
 // Reset the game
 againBtn.addEventListener("click", function () {
-  score = 20;
-  secretNumber = Math.trunc(Math.random() * 30) + 1;
+  state.score = 20;
+  state.secretNumber = Math.trunc(Math.random() * 30) + 1;
 
-  messageEl.textContent = "Start guessing...🙂";
-  scoreEl.textContent = score;
+  renderMessage("Start guessing...🙂");
+  scoreEl.textContent = state.score;
   numberEl.textContent = "?";
   guessEl.value = "";
   numberEl.style.width = "15rem";
